@@ -1,0 +1,898 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+  <title>Founders Table by RAG Holdings | Real Founders. Real Stories.</title>
+  <meta name="description" content="Founders Table by RAG Holdings — conversations with founders and entrepreneurs about their journeys, challenges and the ideas shaping business. Recorded at RAG Biz HQ, Sheikh Zayed Road, Dubai." />
+  <meta name="theme-color" content="#111836" />
+  <link rel="canonical" href="https://www.ragroup.ae/founders-table/" />
+
+  <!-- Social sharing -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Founders Table by RAG Holdings — Real Founders. Real Stories." />
+  <meta property="og:description" content="Conversations with founders and entrepreneurs about their journeys, challenges and the ideas shaping business." />
+  <meta property="og:image" content="assets/img/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+
+  <link rel="icon" type="image/png" href="assets/img/favicon.png" />
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png" />
+
+  <!-- Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,500&display=swap" rel="stylesheet" />
+
+  <!-- Thumbnails are served by YouTube -->
+  <link rel="preconnect" href="https://i.ytimg.com" />
+
+  <link rel="preload" as="image" href="assets/video/founders-table-montage-poster.webp" fetchpriority="high" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=18" />
+
+  <script>
+    // Where the guest-suggestion form posts to.
+    // Default: the included Node server (server.js). To use Google Sheets instead,
+    // paste your Apps Script web-app URL here (see integrations/google-apps-script.gs).
+    // applyEndpoint receives "Be a guest" applications (section form + pop-up).
+    // With Google Sheets, set both to the same Apps Script /exec URL.
+    window.FT_CONFIG = {
+      formEndpoint: '/api/guest-suggestions',
+      applyEndpoint: '/api/podcast-applications',
+      popupDelaySeconds: 20,   // show the pop-up after this long on the page…
+      popupScrollPercent: 45,  // …or once the visitor has scrolled this far down
+      popupSnoozeDays: 3       // after it's closed, wait this many days before showing it again
+    };
+    document.documentElement.classList.add('js');
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ============================== HEADER ============================== -->
+  <header class="site-header" id="top">
+    <div class="container header-inner">
+      <a href="#top" class="brand" aria-label="Founders Table by RAG Holdings — back to top">
+        <img src="assets/img/founders-table-mark.png" alt="" width="58" height="31" />
+        <span class="brand-text">
+          <span class="brand-name">The Founders Table</span>
+          <span class="brand-sub">by RAG Holdings</span>
+        </span>
+      </a>
+
+      <nav class="main-nav" id="main-nav" aria-label="Main">
+        <a href="#about">About</a>
+        <a href="#host">The Host</a>
+        <a href="#venue">The Venue</a>
+        <a href="#episodes">Episodes</a>
+        <a href="#apply">Be a Guest</a>
+        <a href="#suggest">Suggest a Guest</a>
+        <a class="btn btn-gold btn-sm nav-cta" href="https://www.youtube.com/@RAGGlobalBusinessHub?sub_confirmation=1" target="_blank" rel="noopener">
+          <svg class="i" aria-hidden="true"><use href="#i-youtube" /></svg> Subscribe
+        </a>
+      </nav>
+
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false" aria-controls="main-nav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ============================== 1. HERO ============================== -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-bg" aria-hidden="true">
+        <div class="glow glow-1"></div>
+        <div class="glow glow-2"></div>
+        <div class="grain"></div>
+      </div>
+
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <img class="hero-logo" src="assets/img/founders-table-logo.webp" alt="The Founders Table Podcast by RAG Holdings" width="720" height="703" fetchpriority="high" />
+
+          <p class="eyebrow hero-anim" style="--d:.1s"><span class="live-dot" aria-hidden="true"></span> The signature podcast of RAG Holdings</p>
+
+          <h1 id="hero-title" class="hero-title hero-anim" style="--d:.2s">
+            Real Founders.<br /><span class="text-gold">Real Stories.</span>
+          </h1>
+
+          <p class="hero-lead hero-anim" style="--d:.3s">
+            Conversations with founders and entrepreneurs about their journeys, challenges and the ideas shaping business.
+          </p>
+
+          <div class="hero-actions hero-anim" style="--d:.4s">
+            <a href="#episodes" class="btn btn-gold btn-lg">
+              <svg class="i" aria-hidden="true"><use href="#i-play" /></svg>
+              Watch the Episodes
+            </a>
+            <a href="https://www.youtube.com/@RAGGlobalBusinessHub?sub_confirmation=1" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-youtube" /></svg>
+              Subscribe
+            </a>
+          </div>
+
+          <ul class="hero-meta hero-anim" style="--d:.5s">
+            <li><strong data-episode-count>4</strong> episodes out now</li>
+            <li>Recorded at <strong>RAG Biz HQ</strong></li>
+            <li>Sheikh Zayed Road, <strong>Dubai</strong></li>
+          </ul>
+        </div>
+
+        <div class="hero-media">
+          <figure class="video-card">
+            <div class="video-frame">
+              <video id="hero-video" class="hero-video"
+                     muted loop playsinline autoplay preload="metadata"
+                     poster="assets/video/founders-table-montage-poster.webp"
+                     aria-label="Highlights from The Founders Table podcast, recorded at RAG Biz HQ">
+                <source src="assets/video/founders-table-montage.mp4" type="video/mp4" />
+              </video>
+              <div class="video-shade" aria-hidden="true"></div>
+
+              <span class="video-chip"><span class="rec-dot" aria-hidden="true"></span> On set · RAG Biz HQ</span>
+
+              <div class="video-controls">
+                <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Turn sound on">
+                  <svg class="i i-muted" aria-hidden="true"><use href="#i-muted" /></svg>
+                  <svg class="i i-sound" aria-hidden="true"><use href="#i-sound" /></svg>
+                  <span class="sound-label">Sound off</span>
+                </button>
+                <button class="play-toggle" type="button" aria-label="Pause video">
+                  <svg class="i i-pause" aria-hidden="true"><use href="#i-pause" /></svg>
+                  <svg class="i i-playsm" aria-hidden="true"><use href="#i-play" /></svg>
+                </button>
+              </div>
+
+              <div class="video-progress" aria-hidden="true"><span></span></div>
+            </div>
+
+            <figcaption class="video-meta">
+              <div class="video-meta-item">
+                <svg class="i" aria-hidden="true"><use href="#i-mic" /></svg>
+                <div><strong>Long-form</strong><span>Conversations</span></div>
+              </div>
+              <div class="video-meta-item">
+                <svg class="i" aria-hidden="true"><use href="#i-pin" /></svg>
+                <div><strong>Dubai, UAE</strong><span>Sheikh Zayed Rd</span></div>
+              </div>
+            </figcaption>
+          </figure>
+        </div>
+      </div>
+
+      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- Topic ticker -->
+    <div class="ticker" aria-hidden="true">
+      <div class="ticker-track">
+        <span>Founder Journeys</span><i>•</i><span>Starting Up in Dubai</span><i>•</i><span>Leadership</span><i>•</i><span>Resilience</span><i>•</i><span>Building Culture</span><i>•</i><span>Scaling Across Borders</span><i>•</i><span>Lessons Learned the Hard Way</span><i>•</i>
+        <span>Founder Journeys</span><i>•</i><span>Starting Up in Dubai</span><i>•</i><span>Leadership</span><i>•</i><span>Resilience</span><i>•</i><span>Building Culture</span><i>•</i><span>Scaling Across Borders</span><i>•</i><span>Lessons Learned the Hard Way</span><i>•</i>
+      </div>
+    </div>
+
+    <!-- ============================== 2. ABOUT ============================== -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-head reveal">
+            <p class="eyebrow eyebrow-dark">About the podcast</p>
+            <h2 id="about-title" class="section-title">A seat at the table with the people <em>behind</em> the businesses.</h2>
+          </div>
+
+          <div class="about-body reveal" style="--d:.1s">
+            <p class="lead">
+              Founders Table by RAG Holdings brings founders, entrepreneurs and business leaders together for meaningful conversations.
+              From starting a business to navigating challenges and exploring opportunities in Dubai, each episode shares experiences and insights from the people behind the businesses.
+            </p>
+
+            <div class="about-hosts">
+              <div class="about-avatars" aria-hidden="true">
+                <img class="about-avatar" src="assets/img/host-deeraj-rao.webp" alt="" width="1200" height="1591" loading="lazy" decoding="async" />
+                <img class="about-avatar about-avatar-rassal" src="assets/img/host-rassal-ahmed.jpg" alt="" width="500" height="550" loading="lazy" decoding="async" />
+              </div>
+              <p class="about-hosts-text">
+                <span>Hosted by</span>
+                <strong>Deeraj Rao</strong><br />
+                <strong>&amp; Rassal Ahmed</strong> <em>Founder &amp; CEO, RAG Holdings</em>
+              </p>
+              <a class="link-arrow about-hosts-link" href="#host">Meet the host <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+            </div>
+          </div>
+        </div>
+
+        <ol class="pillars reveal" style="--d:.15s">
+          <li class="pillar">
+            <div class="pillar-top">
+              <span class="pillar-num">01</span>
+              <svg class="i pillar-icon" aria-hidden="true"><use href="#i-route" /></svg>
+            </div>
+            <h3>The journey</h3>
+            <p>How it started, the turning points, and the moment they knew they could do it on their own.</p>
+          </li>
+          <li class="pillar">
+            <div class="pillar-top">
+              <span class="pillar-num">02</span>
+              <svg class="i pillar-icon" aria-hidden="true"><use href="#i-mountain" /></svg>
+            </div>
+            <h3>The challenges</h3>
+            <p>The setbacks, hard decisions and lessons you won’t find in a press release.</p>
+          </li>
+          <li class="pillar">
+            <div class="pillar-top">
+              <span class="pillar-num">03</span>
+              <svg class="i pillar-icon" aria-hidden="true"><use href="#i-spark" /></svg>
+            </div>
+            <h3>The opportunity</h3>
+            <p>Ideas shaping business today — and what it really takes to build and grow in Dubai.</p>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============================== 2b. THE HOST ============================== -->
+    <section class="section host" id="host" aria-labelledby="host-title">
+      <div class="container host-grid">
+        <figure class="host-photo reveal">
+          <div class="host-photo-frame">
+            <img src="assets/img/host-deeraj-rao.webp" alt="Deeraj Rao, host of The Founders Table podcast" width="1200" height="1591" loading="lazy" decoding="async" />
+          </div>
+          <figcaption class="host-badge">
+            <svg class="i" aria-hidden="true"><use href="#i-mic" /></svg>
+            <span><strong>Your host</strong>The Founders Table</span>
+          </figcaption>
+        </figure>
+
+        <div class="host-copy">
+          <p class="eyebrow eyebrow-dark reveal">Meet the host</p>
+          <h2 id="host-title" class="section-title reveal" style="--d:.05s">Deeraj Rao</h2>
+          <p class="host-role reveal" style="--d:.08s">Group Marketing Head, RAG Holdings</p>
+
+          <div class="host-bio reveal" style="--d:.12s">
+            <p>Deeraj leads marketing at RAG Holdings across the UAE, Qatar, Singapore and India, building the team that handles ads, content, PR and the brand’s digital presence.</p>
+            <p>His career started behind the microphone. Over six years at 93.5 Red FM in Bengaluru he produced the breakfast and evening drive-time shows, picking up recognition at the New York Festivals Radio Awards and the Indian Radio Forum Awards. He went on to run <strong>IPL and ICC T20 World Cup</strong> campaigns at ITW Consulting, and brand integrations for Disney Star shows at The Walt Disney Company.</p>
+            <p>Off the clock, he’s the Community Head of <strong>RCB Fan Army UAE</strong>.</p>
+          </div>
+
+          <!-- Pull quote — enable once Deeraj has approved it:
+          <blockquote class="host-quote reveal">
+            <svg class="i" aria-hidden="true"><use href="#i-quote" /></svg>
+            <p>Audiences don’t owe you their attention. You earn it, every single day, or they switch off.</p>
+          </blockquote>
+          -->
+
+          <dl class="host-facts reveal" style="--d:.16s">
+            <div><dt>12+</dt><dd>Years in media<br />&amp; marketing</dd></div>
+            <div><dt>4</dt><dd>Markets: UAE, Qatar,<br />Singapore, India</dd></div>
+            <div><dt>6</dt><dd>Years producing<br />award-winning radio</dd></div>
+          </dl>
+
+          <div class="host-brands reveal" style="--d:.2s">
+            <p class="host-brands-label">Worked with</p>
+            <ul class="brand-logos">
+              <li class="on-dark" title="CRED"><img src="assets/img/brands/cred.png" alt="CRED" width="192" height="228" loading="lazy" /></li>
+              <li title="Groww"><img src="assets/img/brands/groww.png" alt="Groww" width="694" height="189" loading="lazy" /></li>
+              <li title="CoinDCX"><img src="assets/img/brands/coindcx.svg" alt="CoinDCX" width="496" height="149" loading="lazy" /></li>
+              <li title="Tata Tea"><img src="assets/img/brands/tata-tea.svg" alt="Tata Tea" width="1078" height="166" loading="lazy" /></li>
+              <li title="Disney Star"><img src="assets/img/brands/disney-star.svg" alt="Disney Star" width="599" height="126" loading="lazy" /></li>
+              <li class="on-dark" title="MEFIT Summit (MEFITPRO)"><img src="assets/img/brands/mefit.png" alt="MEFIT Summit" width="824" height="100" loading="lazy" /></li>
+              <li class="brand-text" title="Liwa Festival">Liwa Festival</li>
+            </ul>
+          </div>
+
+          <div class="host-actions reveal" style="--d:.24s">
+            <a class="btn btn-navy btn-lg host-wa" href="https://wa.me/971527026271?text=Hi%20Deeraj%2C%20I%20came%20across%20The%20Founders%20Table%20podcast%20and%20would%20like%20to%20connect." target="_blank" rel="noopener">
+              <svg class="i" aria-hidden="true"><use href="#i-whatsapp" /></svg> Chat on WhatsApp
+            </a>
+            <a class="btn btn-outline btn-lg" href="https://www.linkedin.com/in/deerajpnrao/" target="_blank" rel="noopener">
+              <svg class="i i-li" aria-hidden="true"><use href="#i-linkedin" /></svg> LinkedIn
+            </a>
+          </div>
+          <p class="host-phone reveal" style="--d:.26s">or call <a href="tel:+971527026271">+971 52 702 6271</a></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 3. RAG + VENUE ============================== -->
+    <section class="section venue" id="venue" aria-labelledby="venue-title">
+      <div class="container venue-grid">
+        <div class="venue-gallery reveal" aria-label="RAG Biz HQ photos">
+          <figure class="vg vg-main">
+            <img src="assets/img/rag-biz-hq-lounge.webp" alt="RAG Biz HQ lounge overlooking the Dubai skyline and Burj Khalifa from Sheikh Zayed Road" width="750" height="600" loading="lazy" decoding="async" />
+            <figcaption>RAG Biz HQ · Sheikh Zayed Road</figcaption>
+          </figure>
+          <figure class="vg vg-studio">
+            <img src="assets/img/podcast-studio-glass.webp" alt="The glass-walled Founders Table recording studio at RAG Biz HQ" width="720" height="1280" loading="lazy" decoding="async" />
+            <figcaption>The studio</figcaption>
+          </figure>
+          <figure class="vg vg-rec">
+            <img src="assets/img/podcast-recording.webp" alt="Hosts and guest recording a Founders Table episode" width="720" height="1280" loading="lazy" decoding="async" />
+            <figcaption>On air</figcaption>
+          </figure>
+          <div class="vg-badge" aria-hidden="true">
+            <img src="assets/img/rag-holdings-logo.webp" alt="" width="512" height="512" loading="lazy" />
+          </div>
+        </div>
+
+        <div class="venue-copy">
+          <p class="eyebrow reveal">About RAG Holdings &amp; the venue</p>
+          <h2 id="venue-title" class="section-title light reveal" style="--d:.05s">Where Dubai’s founders <span class="text-gold">build, meet and talk.</span></h2>
+
+          <p class="reveal" style="--d:.1s">
+            RAG Holdings helps entrepreneurs start and grow their businesses, with services ranging from company formation to workspace solutions.
+            With three business centres in Dubai, RAG brings together a growing community of founders and professionals.
+          </p>
+          <p class="reveal" style="--d:.15s">
+            Founders Table is recorded at <strong>RAG Biz HQ on Sheikh Zayed Road</strong> — a prime business location with a dedicated space for conversations, connections and sharing ideas.
+          </p>
+
+          <dl class="venue-stats reveal" style="--d:.2s">
+            <div><dt>3</dt><dd>Business centres<br />in Dubai</dd></div>
+            <div><dt><svg class="i" aria-hidden="true"><use href="#i-building" /></svg></dt><dd>Company formation<br />to workspaces</dd></div>
+            <div><dt><svg class="i" aria-hidden="true"><use href="#i-pin" /></svg></dt><dd>Sheikh Zayed Road,<br />Dubai</dd></div>
+          </dl>
+
+          <a class="link-arrow reveal" style="--d:.25s" href="https://www.ragroup.ae" target="_blank" rel="noopener">
+            Explore RAG Holdings <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 4. EPISODES ============================== -->
+    <section class="section episodes" id="episodes" aria-labelledby="episodes-title">
+      <div class="container">
+        <div class="episodes-head">
+          <div class="reveal">
+            <p class="eyebrow">Watch the episodes</p>
+            <h2 id="episodes-title" class="section-title light">Pull up a chair.</h2>
+          </div>
+          <p class="episodes-intro reveal" style="--d:.1s">
+            Full conversations on YouTube, plus short highlight reels from every episode.
+            <a href="https://www.youtube.com/@RAGGlobalBusinessHub/videos" target="_blank" rel="noopener" class="link-arrow">All videos on YouTube <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+          </p>
+        </div>
+
+        <!-- Rows are generated from assets/js/episodes.js -->
+        <div class="episode-list" id="episode-list"></div>
+
+        <noscript>
+          <p class="noscript">Watch every episode on our <a href="https://www.youtube.com/@RAGGlobalBusinessHub/videos">YouTube channel</a>.</p>
+        </noscript>
+      </div>
+    </section>
+
+    <!-- ============================== 4b. INSTAGRAM REELS ============================== -->
+    <section class="section insta" id="instagram" aria-labelledby="insta-title">
+      <div class="container">
+        <div class="insta-head">
+          <div class="reveal">
+            <p class="eyebrow">On Instagram</p>
+            <h2 id="insta-title" class="section-title light">Moments from <span class="text-gold">the table.</span></h2>
+          </div>
+          <div class="insta-head-side reveal" style="--d:.1s">
+            <p>Clips, highlights and behind-the-scenes from every episode.</p>
+            <div class="insta-controls">
+              <a class="btn btn-ghost btn-sm" href="https://www.instagram.com/ragholdings/" target="_blank" rel="noopener">
+                <svg class="i" aria-hidden="true"><use href="#i-instagram" /></svg> Follow @ragholdings
+              </a>
+              <button type="button" class="insta-nav" data-dir="-1" aria-label="Previous reels" aria-controls="insta-track">
+                <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </button>
+              <button type="button" class="insta-nav" data-dir="1" aria-label="Next reels" aria-controls="insta-track">
+                <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Cards are generated from window.FT_INSTAGRAM in assets/js/episodes.js -->
+      <div class="insta-track" id="insta-track" tabindex="0" aria-label="Instagram reels from The Founders Table"></div>
+
+      <noscript>
+        <p class="noscript container">See all our clips on <a href="https://www.instagram.com/ragholdings/">Instagram</a>.</p>
+      </noscript>
+    </section>
+
+    <!-- ============================== 5. BE A GUEST (lead form) ============================== -->
+    <section class="section apply" id="apply" aria-labelledby="apply-title">
+      <div class="container apply-grid">
+        <div class="apply-copy reveal">
+          <p class="eyebrow eyebrow-dark">Be a guest</p>
+          <h2 id="apply-title" class="section-title">You can be a part of <span class="text-gold-dark">RAG Founders Table</span> Podcast.</h2>
+          <p class="lead">Building something worth talking about? Take a seat at the table and share your founder story — recorded at RAG Biz HQ, Sheikh Zayed Road, Dubai.</p>
+
+          <ol class="apply-steps">
+            <li>
+              <span class="apply-step-num">01</span>
+              <div><strong>Apply</strong><span>Tell us about you and your business — it takes two minutes.</span></div>
+            </li>
+            <li>
+              <span class="apply-step-num">02</span>
+              <div><strong>We get in touch</strong><span>Our team reviews every application and reaches out to shortlisted founders.</span></div>
+            </li>
+            <li>
+              <span class="apply-step-num">03</span>
+              <div><strong>Record at RAG Biz HQ</strong><span>Sit down with Rassal Ahmed &amp; Deeraj Rao in our studio in Dubai.</span></div>
+            </li>
+          </ol>
+
+          <figure class="apply-photo">
+            <img src="assets/img/podcast-recording.webp" alt="A Founders Table episode being recorded at RAG Biz HQ" width="720" height="1280" loading="lazy" decoding="async" />
+            <figcaption><svg class="i" aria-hidden="true"><use href="#i-mic" /></svg> Your seat is waiting</figcaption>
+          </figure>
+        </div>
+
+        <div class="form-card reveal" style="--d:.1s">
+          <form id="apply-form" class="lead-form" data-source="section" novalidate>
+            <p class="form-card-title">Apply to be a guest</p>
+
+            <div class="form-row two">
+              <div class="field">
+                <label for="apply-fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+                <input id="apply-fullName" name="fullName" type="text" maxlength="120" autocomplete="name" placeholder="Your name" />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="apply-company">Company name <span class="req" aria-hidden="true">*</span></label>
+                <input id="apply-company" name="company" type="text" maxlength="160" autocomplete="organization" placeholder="Your company" />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="form-row two">
+              <div class="field">
+                <label for="apply-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="apply-email" name="email" type="email" maxlength="200" autocomplete="email" placeholder="you@company.com" />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="apply-phone">Phone / WhatsApp <span class="req" aria-hidden="true">*</span></label>
+                <input id="apply-phone" name="phone" type="tel" maxlength="30" autocomplete="tel" placeholder="+971 5X XXX XXXX" />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="form-row two">
+              <div class="field">
+                <label for="apply-role">Your role</label>
+                <input id="apply-role" name="role" type="text" maxlength="120" autocomplete="organization-title" placeholder="e.g. Founder &amp; CEO" />
+              </div>
+              <div class="field">
+                <label for="apply-industry">Industry</label>
+                <select id="apply-industry" name="industry">
+                  <option value="">Select an industry</option>
+                  <option>Technology</option>
+                  <option>Finance &amp; Fintech</option>
+                  <option>Real Estate</option>
+                  <option>Retail &amp; E-commerce</option>
+                  <option>Food &amp; Hospitality</option>
+                  <option>Health &amp; Wellness</option>
+                  <option>Media &amp; Marketing</option>
+                  <option>Consulting &amp; Services</option>
+                  <option>Trading &amp; Logistics</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="field">
+              <label for="apply-linkedin">LinkedIn or company website</label>
+              <div class="input-icon">
+                <svg class="i" aria-hidden="true"><use href="#i-linkedin" /></svg>
+                <input id="apply-linkedin" name="linkedin" type="url" inputmode="url" maxlength="300" placeholder="https://www.linkedin.com/in/…" />
+              </div>
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="field">
+              <label for="apply-story">What story would you share on the podcast? <span class="req" aria-hidden="true">*</span></label>
+              <textarea id="apply-story" name="story" rows="4" maxlength="2000" data-required placeholder="Your journey, a turning point, a lesson learned the hard way…"></textarea>
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="apply-website">Website</label>
+              <input id="apply-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-foot">
+              <p class="form-note"><span class="req">*</span> Required</p>
+              <button type="submit" class="btn btn-navy btn-lg submit-btn">
+                <span class="btn-label">Apply to be a Guest</span>
+                <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="form-status" role="alert" aria-live="assertive"></p>
+          </form>
+
+          <div class="form-success" tabindex="-1" hidden>
+            <div class="success-icon"><svg class="i" aria-hidden="true"><use href="#i-check" /></svg></div>
+            <h3>Thank you! Your application is in.</h3>
+            <p>Our team reviews every application and will get in touch if it’s a fit. Meanwhile, catch up on the latest episodes.</p>
+            <div class="success-actions">
+              <a href="#episodes" class="btn btn-navy">Watch the Episodes</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 5b. FAQ ============================== -->
+    <section class="section faq" id="faq" aria-labelledby="faq-title">
+      <div class="container faq-grid">
+        <div class="faq-head reveal">
+          <p class="eyebrow">FAQs</p>
+          <h2 id="faq-title" class="section-title light">Questions, <span class="text-gold">answered.</span></h2>
+          <p class="faq-intro">Everything you need to know about watching, joining and suggesting guests for Founders Table.</p>
+          <a class="link-arrow" href="tel:+971586046586">Still have a question? Call +971 58 604 6586 <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg></a>
+        </div>
+
+        <div class="faq-list reveal" style="--d:.1s">
+          <details class="faq-item" open>
+            <summary>What is Founders Table?</summary>
+            <div class="faq-answer"><p>Founders Table is the signature podcast of RAG Holdings. Each episode is a long-form conversation with a founder or business leader about their journey, the challenges they faced and the ideas shaping business today.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Who hosts the podcast?</summary>
+            <div class="faq-answer"><p>The podcast is hosted by Rassal Ahmed, Founder &amp; CEO of RAG Holdings, together with Deeraj Rao.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Where is Founders Table recorded?</summary>
+            <div class="faq-answer"><p>Every episode is recorded in our dedicated studio at RAG Biz HQ on Sheikh Zayed Road, Dubai.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Where can I watch the episodes?</summary>
+            <div class="faq-answer"><p>Full episodes are on our <a href="https://www.youtube.com/@RAGGlobalBusinessHub" target="_blank" rel="noopener">YouTube channel</a>, and short clips and highlights are posted on <a href="https://www.instagram.com/ragholdings/" target="_blank" rel="noopener">Instagram</a>. Each episode runs about 35–50 minutes.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>How can I be a guest on the podcast?</summary>
+            <div class="faq-answer"><p>Fill in the <a href="#apply">Be a guest</a> form with your details and the story you’d like to share. Our team reviews every application and reaches out to shortlisted founders.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Who can apply to be a guest?</summary>
+            <div class="faq-answer"><p>We welcome founders and business leaders of any size and from any industry — what matters most is a story worth sharing.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Does it cost anything to apply?</summary>
+            <div class="faq-answer"><p>No. Applying to be a guest and suggesting a founder are both free.</p></div>
+          </details>
+
+          <details class="faq-item">
+            <summary>Can I suggest someone else to be on the show?</summary>
+            <div class="faq-answer"><p>Yes! Use the <a href="#suggest">Suggest a guest</a> form below. Share the founder’s name and LinkedIn profile, tell us why they belong at the table, and add any questions you’d like us to ask them.</p></div>
+          </details>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============================== 6. SUGGEST A GUEST ============================== -->
+    <section class="section suggest" id="suggest" aria-labelledby="suggest-title">
+      <div class="container suggest-grid">
+        <div class="suggest-copy reveal">
+          <p class="eyebrow eyebrow-dark">Suggest our next guest</p>
+          <h2 id="suggest-title" class="section-title">Which founder do you want to see on <span class="text-gold-dark">Founders Table?</span></h2>
+          <p class="lead">Name the founder you’d love to hear from, share their LinkedIn profile, and tell us why their story deserves a seat at the table. We’ll take it from there.</p>
+
+          <ul class="suggest-points">
+            <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg> Every suggestion is read by our team</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg> We reach out to the founder via LinkedIn</li>
+            <li><svg class="i" aria-hidden="true"><use href="#i-check" /></svg> Your questions could be asked on air</li>
+          </ul>
+
+          <div class="past-guests">
+            <img src="assets/img/founders-table-mark.png" alt="" width="581" height="312" loading="lazy" />
+            <p class="past-guests-label">At the table so far</p>
+            <ul id="past-guests"></ul>
+          </div>
+        </div>
+
+        <div class="form-card reveal" style="--d:.1s">
+          <form id="guest-form" class="guest-form" novalidate>
+            <!-- 1 · The founder -->
+            <fieldset class="form-group">
+              <legend><span class="form-group-num">1</span> The founder you want to see</legend>
+
+              <div class="field">
+                <label for="founderName">Founder’s full name <span class="req" aria-hidden="true">*</span></label>
+                <input id="founderName" name="founderName" type="text" maxlength="120" autocomplete="off" placeholder="e.g. Jane Doe" />
+                <p class="field-error" id="founderName-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <label for="linkedin">Founder’s LinkedIn profile <span class="req" aria-hidden="true">*</span></label>
+                <div class="input-icon">
+                  <svg class="i" aria-hidden="true"><use href="#i-linkedin" /></svg>
+                  <input id="linkedin" name="linkedin" type="url" inputmode="url" maxlength="300" autocomplete="off" placeholder="https://www.linkedin.com/in/…" />
+                </div>
+                <p class="field-hint">Open their LinkedIn profile and copy the link from the address bar.</p>
+                <p class="field-error" id="linkedin-error" aria-live="polite"></p>
+              </div>
+
+              <div class="form-row two">
+                <div class="field">
+                  <label for="companyName">Company name <span class="req" aria-hidden="true">*</span></label>
+                  <input id="companyName" name="companyName" type="text" maxlength="160" autocomplete="off" placeholder="e.g. Acme Ventures" />
+                  <p class="field-error" id="companyName-error" aria-live="polite"></p>
+                </div>
+                <div class="field">
+                  <label for="founderRole">Their role</label>
+                  <input id="founderRole" name="founderRole" type="text" maxlength="120" autocomplete="off" placeholder="e.g. Founder &amp; CEO" />
+                </div>
+              </div>
+
+              <div class="form-row two">
+                <div class="field">
+                  <label for="industry">Industry</label>
+                  <select id="industry" name="industry">
+                    <option value="">Select an industry</option>
+                    <option>Technology</option>
+                    <option>Finance &amp; Fintech</option>
+                    <option>Real Estate</option>
+                    <option>Retail &amp; E-commerce</option>
+                    <option>Food &amp; Hospitality</option>
+                    <option>Health &amp; Wellness</option>
+                    <option>Media &amp; Marketing</option>
+                    <option>Consulting &amp; Services</option>
+                    <option>Trading &amp; Logistics</option>
+                    <option>Other</option>
+                  </select>
+                </div>
+                <div class="field">
+                  <label for="location">Based in</label>
+                  <input id="location" name="location" type="text" maxlength="120" autocomplete="off" placeholder="e.g. Dubai, UAE" />
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="companyWebsite">Company website or Instagram</label>
+                <div class="input-icon">
+                  <svg class="i i-muted-icon" aria-hidden="true"><use href="#i-globe" /></svg>
+                  <input id="companyWebsite" name="companyWebsite" type="text" inputmode="url" maxlength="300" autocomplete="off" placeholder="e.g. acmeventures.com or @acmeventures" />
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- 2 · Why them -->
+            <fieldset class="form-group">
+              <legend><span class="form-group-num">2</span> Why they belong at the table</legend>
+
+              <div class="field">
+                <label for="why">Why would you like to see this founder on the podcast? <span class="req" aria-hidden="true">*</span></label>
+                <textarea id="why" name="why" rows="4" maxlength="2000" placeholder="Their journey, a big turning point, what makes their story worth hearing…"></textarea>
+                <p class="field-error" id="why-error" aria-live="polite"></p>
+              </div>
+
+              <div class="field">
+                <p class="field-label" id="topics-label">What should they talk about? <span class="opt">pick any</span></p>
+                <div class="chips" role="group" aria-labelledby="topics-label">
+                  <label class="chip"><input type="checkbox" name="topics" value="Starting up" /><span>Starting up</span></label>
+                  <label class="chip"><input type="checkbox" name="topics" value="Scaling the business" /><span>Scaling the business</span></label>
+                  <label class="chip"><input type="checkbox" name="topics" value="Funding & investment" /><span>Funding &amp; investment</span></label>
+                  <label class="chip"><input type="checkbox" name="topics" value="Leadership & culture" /><span>Leadership &amp; culture</span></label>
+                  <label class="chip"><input type="checkbox" name="topics" value="Failure & resilience" /><span>Failure &amp; resilience</span></label>
+                  <label class="chip"><input type="checkbox" name="topics" value="Doing business in Dubai" /><span>Doing business in Dubai</span></label>
+                  <label class="chip"><input type="checkbox" name="topics" value="Family business" /><span>Family business</span></label>
+                  <label class="chip"><input type="checkbox" name="topics" value="Personal brand" /><span>Personal brand</span></label>
+                </div>
+              </div>
+
+              <div class="field">
+                <label for="questions">What would you like us to ask them?</label>
+                <textarea id="questions" name="questions" rows="3" maxlength="2000" placeholder="Your questions for the founder"></textarea>
+              </div>
+            </fieldset>
+
+            <!-- 3 · About you -->
+            <fieldset class="form-group">
+              <legend><span class="form-group-num">3</span> About you <span class="opt">optional</span></legend>
+
+              <div class="field">
+                <p class="field-label" id="connection-label">How do you know this founder?</p>
+                <div class="chips" role="radiogroup" aria-labelledby="connection-label">
+                  <label class="chip"><input type="radio" name="connection" value="I can introduce them" /><span>I can introduce them</span></label>
+                  <label class="chip"><input type="radio" name="connection" value="I follow their work" /><span>I follow their work</span></label>
+                  <label class="chip"><input type="radio" name="connection" value="I am this founder" /><span>I am this founder</span></label>
+                </div>
+              </div>
+
+              <div class="form-row two">
+                <div class="field">
+                  <label for="yourName">Your name</label>
+                  <input id="yourName" name="yourName" type="text" maxlength="120" autocomplete="name" />
+                </div>
+                <div class="field">
+                  <label for="yourEmail">Your email</label>
+                  <input id="yourEmail" name="yourEmail" type="email" maxlength="200" autocomplete="email" />
+                  <p class="field-error" id="yourEmail-error" aria-live="polite"></p>
+                </div>
+              </div>
+            </fieldset>
+
+            <!-- Honeypot (hidden from people, catches bots) -->
+            <div class="hp" aria-hidden="true">
+              <label for="website">Website</label>
+              <input id="website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <div class="form-foot">
+              <p class="form-note"><span class="req">*</span> Required</p>
+              <button type="submit" class="btn btn-navy btn-lg submit-btn">
+                <span class="btn-label">Suggest a Guest</span>
+                <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg>
+                <span class="spinner" aria-hidden="true"></span>
+              </button>
+            </div>
+            <p class="form-status" id="form-status" role="alert" aria-live="assertive"></p>
+          </form>
+
+          <div class="form-success" id="form-success" tabindex="-1" hidden>
+            <div class="success-icon"><svg class="i" aria-hidden="true"><use href="#i-check" /></svg></div>
+            <h3>Thank you! We’ve received your guest suggestion.</h3>
+            <p>Our team reviews every suggestion. Meanwhile, catch up on the latest episodes.</p>
+            <div class="success-actions">
+              <a href="#episodes" class="btn btn-navy">Watch the Episodes</a>
+              <button type="button" class="btn btn-outline" id="suggest-another">Suggest another founder</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ============================== 6. FOOTER ============================== -->
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <img src="assets/img/founders-table-logo.webp" alt="The Founders Table Podcast by RAG Holdings" width="720" height="703" loading="lazy" class="footer-ft" />
+      </div>
+
+      <div class="footer-col">
+        <h4>Listen &amp; follow</h4>
+        <ul class="socials">
+          <li><a href="https://www.youtube.com/@RAGGlobalBusinessHub" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-youtube" /></svg> YouTube</a></li>
+          <li><a href="https://www.instagram.com/ragholdings/" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-instagram" /></svg> Instagram</a></li>
+          <li><a href="https://www.linkedin.com/company/ragholdings" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-linkedin" /></svg> LinkedIn</a></li>
+          <li><a href="https://www.ragroup.ae" target="_blank" rel="noopener"><svg class="i" aria-hidden="true"><use href="#i-globe" /></svg> ragroup.ae</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col">
+        <h4>On this page</h4>
+        <ul>
+          <li><a href="#about">About the podcast</a></li>
+          <li><a href="#host">Meet the host</a></li>
+          <li><a href="#venue">RAG Holdings &amp; the venue</a></li>
+          <li><a href="#episodes">Episodes</a></li>
+          <li><a href="#apply">Be a guest on the podcast</a></li>
+          <li><a href="#faq">FAQs</a></li>
+          <li><a href="#suggest">Suggest a guest</a></li>
+        </ul>
+      </div>
+
+      <div class="footer-col footer-rag">
+        <img src="assets/img/rag-holdings-logo.webp" alt="RAG Holdings" width="512" height="512" loading="lazy" class="footer-rag-logo" />
+        <address>
+          RAG Biz HQ, Sheikh Zayed Road<br />Dubai, United Arab Emirates<br />
+          <a href="tel:+971586046586">+971 58 604 6586</a>
+        </address>
+      </div>
+    </div>
+
+    <div class="container footer-bottom">
+      <p>© <span id="year">2026</span> RAG Holdings. All rights reserved.</p>
+      <p>The Founders Table — Real Founders. Real Stories.</p>
+    </div>
+  </footer>
+
+  <!-- ============================== POP-UP: BE A GUEST ============================== -->
+  <dialog class="apply-modal" id="apply-modal" aria-labelledby="apply-modal-title">
+    <div class="apply-modal-inner">
+      <div class="apply-modal-media" aria-hidden="true">
+        <img src="assets/img/podcast-studio-glass.webp" alt="" width="720" height="1280" loading="lazy" decoding="async" />
+        <img class="apply-modal-logo" src="assets/img/founders-table-logo.webp" alt="" width="720" height="703" loading="lazy" />
+      </div>
+
+      <div class="apply-modal-body">
+        <button type="button" class="modal-close" data-close-modal aria-label="Close">
+          <svg class="i" aria-hidden="true"><use href="#i-close" /></svg>
+        </button>
+
+        <div class="apply-modal-content">
+          <p class="eyebrow eyebrow-dark">Be a guest</p>
+          <h2 id="apply-modal-title" class="modal-title">You can be a part of <span class="text-gold-dark">RAG Founders Table</span> Podcast</h2>
+          <p class="modal-lead">Share your founder story in our studio at RAG Biz HQ, Dubai. Leave your details and our team will reach out.</p>
+
+          <form id="apply-popup-form" class="lead-form" data-source="popup" novalidate>
+            <div class="field">
+              <label for="pop-fullName">Full name <span class="req" aria-hidden="true">*</span></label>
+              <input id="pop-fullName" name="fullName" type="text" maxlength="120" autocomplete="name" placeholder="Your name" />
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="field">
+              <label for="pop-company">Company name <span class="req" aria-hidden="true">*</span></label>
+              <input id="pop-company" name="company" type="text" maxlength="160" autocomplete="organization" placeholder="Your company" />
+              <p class="field-error" aria-live="polite"></p>
+            </div>
+            <div class="form-row two">
+              <div class="field">
+                <label for="pop-email">Email <span class="req" aria-hidden="true">*</span></label>
+                <input id="pop-email" name="email" type="email" maxlength="200" autocomplete="email" placeholder="you@company.com" />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+              <div class="field">
+                <label for="pop-phone">Phone / WhatsApp <span class="req" aria-hidden="true">*</span></label>
+                <input id="pop-phone" name="phone" type="tel" maxlength="30" autocomplete="tel" placeholder="+971 5X XXX XXXX" />
+                <p class="field-error" aria-live="polite"></p>
+              </div>
+            </div>
+
+            <div class="hp" aria-hidden="true">
+              <label for="pop-website">Website</label>
+              <input id="pop-website" name="website" type="text" tabindex="-1" autocomplete="off" />
+            </div>
+
+            <button type="submit" class="btn btn-navy btn-lg submit-btn modal-submit">
+              <span class="btn-label">Apply to be a Guest</span>
+              <svg class="i" aria-hidden="true"><use href="#i-arrow" /></svg>
+              <span class="spinner" aria-hidden="true"></span>
+            </button>
+            <p class="form-status" role="alert" aria-live="assertive"></p>
+            <button type="button" class="modal-dismiss" data-close-modal>No thanks, maybe later</button>
+          </form>
+
+          <div class="form-success" tabindex="-1" hidden>
+            <div class="success-icon"><svg class="i" aria-hidden="true"><use href="#i-check" /></svg></div>
+            <h3>Thank you! Your application is in.</h3>
+            <p>Our team will get in touch if it’s a fit.</p>
+            <div class="success-actions">
+              <button type="button" class="btn btn-navy" data-close-modal>Back to the page</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </dialog>
+
+  <!-- ============================== ICONS ============================== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="i-play" viewBox="0 0 24 24"><path fill="currentColor" d="M8 5.14v13.72a1 1 0 0 0 1.52.85l11.02-6.86a1 1 0 0 0 0-1.7L9.52 4.29A1 1 0 0 0 8 5.14Z"/></symbol>
+      <symbol id="i-pause" viewBox="0 0 24 24"><path fill="currentColor" d="M7 5h3.5v14H7zM13.5 5H17v14h-3.5z"/></symbol>
+      <symbol id="i-youtube" viewBox="0 0 24 24"><path fill="currentColor" d="M23.5 6.2a3 3 0 0 0-2.1-2.1C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.4.5A3 3 0 0 0 .5 6.2 31 31 0 0 0 0 12a31 31 0 0 0 .5 5.8 3 3 0 0 0 2.1 2.1c1.9.5 9.4.5 9.4.5s7.5 0 9.4-.5a3 3 0 0 0 2.1-2.1A31 31 0 0 0 24 12a31 31 0 0 0-.5-5.8ZM9.6 15.6V8.4l6.2 3.6-6.2 3.6Z"/></symbol>
+      <symbol id="i-whatsapp" viewBox="0 0 24 24"><path fill="currentColor" d="M12.04 2a9.9 9.9 0 0 0-8.5 14.98L2 22l5.17-1.5A9.9 9.9 0 1 0 12.04 2Zm0 18.1a8.2 8.2 0 0 1-4.18-1.15l-.3-.18-3.07.89.9-2.99-.2-.31a8.2 8.2 0 1 1 6.85 3.74Zm4.5-6.14c-.25-.12-1.46-.72-1.69-.8-.23-.08-.39-.12-.55.12-.16.25-.63.8-.78.96-.14.17-.29.19-.53.06a6.7 6.7 0 0 1-3.32-2.9c-.25-.43.25-.4.72-1.33.08-.16.04-.3-.02-.43-.06-.12-.55-1.33-.76-1.82-.2-.48-.4-.41-.55-.42h-.47a.9.9 0 0 0-.65.3 2.74 2.74 0 0 0-.86 2.04 4.76 4.76 0 0 0 1 2.53 10.9 10.9 0 0 0 4.17 3.68c1.55.67 2.16.73 2.94.61.47-.07 1.46-.6 1.66-1.18.2-.58.2-1.07.15-1.18-.06-.1-.22-.16-.46-.28Z"/></symbol>
+      <symbol id="i-quote" viewBox="0 0 24 24"><path fill="currentColor" d="M9.6 5C5.9 6.3 3.5 9.3 3.5 13.3V19h6.3v-6.2H6.6c.1-2.6 1.5-4.4 3.9-5.4L9.6 5Zm10.2 0c-3.7 1.3-6.1 4.3-6.1 8.3V19H20v-6.2h-3.2c.1-2.6 1.5-4.4 3.9-5.4L19.8 5Z"/></symbol>
+      <symbol id="i-instagram" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" d="M7 2.5h10A4.5 4.5 0 0 1 21.5 7v10a4.5 4.5 0 0 1-4.5 4.5H7A4.5 4.5 0 0 1 2.5 17V7A4.5 4.5 0 0 1 7 2.5Z"/><circle cx="12" cy="12" r="4.2" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.6" cy="6.4" r="1.2" fill="currentColor"/></symbol>
+      <symbol id="i-linkedin" viewBox="0 0 24 24"><path fill="currentColor" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.83v1.54h.05c.53-1 1.84-2.06 3.79-2.06 4.05 0 4.8 2.67 4.8 6.13V21h-4v-5.03c0-1.2-.02-2.74-1.67-2.74-1.67 0-1.93 1.3-1.93 2.65V21h-4V9.75Z"/></symbol>
+      <symbol id="i-globe" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="9.5"/><path d="M2.5 12h19M12 2.5c2.6 2.8 3.9 6 3.9 9.5s-1.3 6.7-3.9 9.5c-2.6-2.8-3.9-6-3.9-9.5s1.3-6.7 3.9-9.5Z"/></g></symbol>
+      <symbol id="i-muted" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z" fill="currentColor"/><path d="m22 9-6 6M16 9l6 6"/></g></symbol>
+      <symbol id="i-sound" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5 6 9H2v6h4l5 4V5Z" fill="currentColor"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></g></symbol>
+      <symbol id="i-arrow" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M13 6l6 6-6 6"/></symbol>
+      <symbol id="i-mic" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><rect x="9" y="2.5" width="6" height="11.5" rx="3"/><path d="M5.5 11a6.5 6.5 0 0 0 13 0M12 17.5V21.5M8.5 21.5h7"/></g></symbol>
+      <symbol id="i-pin" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8"><path d="M12 21.5s-7-6.2-7-11.5a7 7 0 0 1 14 0c0 5.3-7 11.5-7 11.5Z"/><circle cx="12" cy="10" r="2.6"/></g></symbol>
+      <symbol id="i-building" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="M4 21.5V4.5l9-2v19M13 8.5l7 2v11M2.5 21.5h19"/><path d="M7.5 7.5h2M7.5 11h2M7.5 14.5h2M16 13.5h1M16 17h1" stroke-linecap="round"/></g></symbol>
+      <symbol id="i-route" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"><circle cx="5.5" cy="18.5" r="2.5"/><circle cx="18.5" cy="5.5" r="2.5"/><path d="M8 18.5h7.5a3.5 3.5 0 0 0 0-7h-7a3.5 3.5 0 0 1 0-7H16"/></g></symbol>
+      <symbol id="i-mountain" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"><path d="m2 20 7.5-12 4.5 7 2.5-3.5L22 20H2Z"/><path d="M9.5 8V3.5l3.5 1.5-3.5 1.5" stroke-linecap="round"/></g></symbol>
+      <symbol id="i-spark" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round" d="M12 2.5 14 10l7.5 2-7.5 2-2 7.5-2-7.5-7.5-2L10 10l2-7.5Z"/></symbol>
+      <symbol id="i-check" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" d="m5 12.5 4.5 4.5L19 7.5"/></symbol>
+      <symbol id="i-close" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" d="M6 6l12 12M18 6 6 18"/></symbol>
+      <symbol id="i-clock" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></g></symbol>
+    </defs>
+  </svg>
+
+  <script src="assets/js/episodes.js?v=3"></script>
+  <script src="assets/js/main.js?v=10" defer></script>
+</body>
+</html>
