@@ -349,7 +349,10 @@
 
     const heroCopy = $('.hero-copy');
     const heroMedia = $('.hero-media');
-    const parallax = $$('.host-photo-frame img, .vg img').map((el) => ({ el, speed: el.closest('.vg-main') ? 0.06 : 0.1 }));
+    // limit = share of the frame height the image may travel; matches the zoom headroom set in CSS
+    const parallax = $$('.host-photo-frame img, .vg img').map((el) => ({
+      el, speed: el.closest('.vg-main') ? 0.06 : 0.1, limit: el.closest('.host-photo-frame') ? 0.065 : 0.035,
+    }));
     let ticking = false;
     const update = () => {
       ticking = false;
@@ -363,10 +366,11 @@
         heroCopy.style.opacity = String(1 - p * 0.9);
         if (heroMedia) heroMedia.style.translate = `0 ${sy * 0.08}px`;
       }
-      parallax.forEach(({ el, speed }) => {
+      parallax.forEach(({ el, speed, limit }) => {
         const r = el.parentElement.getBoundingClientRect();
         if (r.bottom < -100 || r.top > vh + 100) return;
-        const offset = (r.top + r.height / 2 - vh / 2) * -speed;
+        const cap = r.height * limit;
+        const offset = Math.max(-cap, Math.min(cap, (r.top + r.height / 2 - vh / 2) * -speed));
         el.style.translate = `0 ${offset.toFixed(1)}px`;
       });
     };
