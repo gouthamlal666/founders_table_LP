@@ -276,6 +276,106 @@
     revealEls.forEach((el) => el.classList.add('in'));
   }
 
+  /* ---------------------------------------------------------- premium scroll motion */
+  if ('IntersectionObserver' in window && !reducedMotion) {
+    const root = document.documentElement;
+    root.classList.add('motion');
+
+    // 1. Section titles rise in word by word from behind a mask
+    const splitWords = (node, state) => {
+      [...node.childNodes].forEach((child) => {
+        if (child.nodeType === 3) {
+          const frag = document.createDocumentFragment();
+          child.textContent.split(/(\s+)/).forEach((part) => {
+            if (!part) return;
+            if (/^\s+$/.test(part)) { frag.appendChild(document.createTextNode(' ')); return; }
+            const mask = document.createElement('span');
+            const word = document.createElement('span');
+            mask.className = 'w';
+            word.textContent = part;
+            word.style.setProperty('--wi', state.i++);
+            // gradient text has to live on the word itself once it is inline-block
+            if (node.classList && node.classList.contains('text-gold')) word.className = 'text-gold';
+            mask.appendChild(word);
+            frag.appendChild(mask);
+          });
+          child.replaceWith(frag);
+        } else if (child.nodeType === 1 && child.tagName !== 'BR') {
+          splitWords(child, state);
+        }
+      });
+    };
+    const titles = $$('.section-title');
+    titles.forEach((t) => {
+      t.setAttribute('aria-label', t.textContent.replace(/\s+/g, ' ').trim());
+      splitWords(t, { i: 0 });
+      t.classList.add('split');
+    });
+
+    // 2. Counters in the host stats
+    const countUp = (el) => {
+      const m = el.textContent.match(/^(\d+)(.*)$/);
+      if (!m) return;
+      const end = +m[1], suffix = m[2], t0 = performance.now(), dur = 1400;
+      const step = (now) => {
+        const p = Math.min(1, (now - t0) / dur), eased = 1 - Math.pow(1 - p, 4);
+        el.textContent = Math.round(end * eased) + suffix;
+        if (p < 1) requestAnimationFrame(step);
+      };
+      el.textContent = '0' + suffix;
+      requestAnimationFrame(step);
+    };
+
+    // 3. Staggered children (pillars, logo wall, FAQ list)
+    $$('.pillars > li, .brand-logos > li, .faq-list > .faq-item, .vg').forEach((el) => {
+      el.style.setProperty('--i', [...el.parentElement.children].indexOf(el));
+    });
+
+    const motionIO = new IntersectionObserver((entries) => {
+      entries.forEach((en) => {
+        if (!en.isIntersecting) return;
+        en.target.classList.add('in');
+        if (en.target.matches('.host-facts')) $$('dt', en.target).forEach(countUp);
+        motionIO.unobserve(en.target);
+      });
+    }, { threshold: 0.2, rootMargin: '0px 0px -60px 0px' });
+    [...titles, ...$$('.host-facts')].forEach((el) => motionIO.observe(el));
+
+    // 4. Scroll progress bar + parallax + hero fade, all in one rAF tick
+    const bar = document.createElement('div');
+    bar.className = 'scroll-progress';
+    bar.setAttribute('aria-hidden', 'true');
+    document.body.appendChild(bar);
+
+    const heroCopy = $('.hero-copy');
+    const heroMedia = $('.hero-media');
+    const parallax = $$('.host-photo-frame img, .vg img').map((el) => ({ el, speed: el.closest('.vg-main') ? 0.06 : 0.1 }));
+    let ticking = false;
+    const update = () => {
+      ticking = false;
+      const vh = window.innerHeight, sy = window.scrollY;
+      const max = root.scrollHeight - vh;
+      bar.style.transform = `scaleX(${max > 0 ? sy / max : 0})`;
+
+      if (heroCopy && sy < vh * 1.2) {
+        const p = Math.min(1, sy / vh);
+        heroCopy.style.translate = `0 ${sy * 0.18}px`;
+        heroCopy.style.opacity = String(1 - p * 0.9);
+        if (heroMedia) heroMedia.style.translate = `0 ${sy * 0.08}px`;
+      }
+      parallax.forEach(({ el, speed }) => {
+        const r = el.parentElement.getBoundingClientRect();
+        if (r.bottom < -100 || r.top > vh + 100) return;
+        const offset = (r.top + r.height / 2 - vh / 2) * -speed;
+        el.style.translate = `0 ${offset.toFixed(1)}px`;
+      });
+    };
+    const requestTick = () => { if (!ticking) { ticking = true; requestAnimationFrame(update); } };
+    window.addEventListener('scroll', requestTick, { passive: true });
+    window.addEventListener('resize', requestTick);
+    update();
+  }
+
   /* ---------------------------------------------------------- guest form */
   const form = $('#guest-form');
   const success = $('#form-success');

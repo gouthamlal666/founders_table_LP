@@ -787,6 +787,41 @@ button { font: inherit; color: inherit; cursor: pointer; }
 /* ---------------------------------------------------------- reveal on scroll */
 .js .reveal { opacity: 0; transform: translateY(34px); transition: opacity .9s var(--ease), transform .9s var(--ease); transition-delay: var(--d, 0s); }
 .js .reveal.in { opacity: 1; transform: none; }
+
+/* ---------------------------------------------------------- premium scroll motion (added by JS, skipped for reduced motion) */
+.scroll-progress {
+  position: fixed; top: 0; left: 0; right: 0; height: 2px; z-index: 150; pointer-events: none;
+  background: var(--gold-grad); transform: scaleX(0); transform-origin: 0 50%; will-change: transform;
+}
+
+/* titles: each word rises from behind a mask */
+.motion .section-title.split .w { display: inline-block; overflow: hidden; vertical-align: top; padding-bottom: .1em; margin-bottom: -.1em; }
+.motion .section-title.split .w > span {
+  display: inline-block; transform: translateY(110%) rotate(3deg); transform-origin: 0 100%;
+  transition: transform 1.1s var(--ease); transition-delay: calc(var(--wi, 0) * 55ms + var(--d, 0s));
+}
+.motion .section-title.split.in .w > span { transform: none; }
+
+/* photos: curtain wipe up while the image settles from a slight zoom */
+.motion .host-photo-frame, .motion .vg { clip-path: inset(100% 0 0 0); transition: clip-path 1.4s var(--ease); transition-delay: calc(var(--i, 0) * 140ms + .1s); }
+.motion .host-photo-frame img, .motion .vg img { scale: 1.22; transition: scale 1.8s var(--ease), transform 1.2s var(--ease); transition-delay: calc(var(--i, 0) * 140ms + .1s), 0s; will-change: translate; }
+.motion .host-photo.in .host-photo-frame, .motion .venue-gallery.in .vg { clip-path: inset(0 0 0 0); }
+.motion .host-photo.in .host-photo-frame img, .motion .venue-gallery.in .vg img { scale: 1.08; }
+.motion .host-photo::before { opacity: 0; transform: translate(-14px, -14px); transition: opacity 1s .7s, transform 1.2s var(--ease) .7s; }
+.motion .host-photo.in::before { opacity: 1; transform: none; }
+.motion .host-badge, .motion .vg-badge { opacity: 0; transform: translateY(16px) scale(.94); transition: opacity .8s 1s, transform 1s var(--ease) 1s; }
+.motion .host-photo.in .host-badge, .motion .venue-gallery.in .vg-badge { opacity: 1; transform: none; }
+
+/* staggered children */
+.motion .pillars > li, .motion .brand-logos > li, .motion .faq-list > .faq-item {
+  opacity: 0; translate: 0 26px; transition: opacity .8s var(--ease), translate .9s var(--ease), background-color .45s, border-color .3s, box-shadow .3s, transform .3s var(--ease);
+  transition-delay: calc(var(--i, 0) * 90ms + .15s), calc(var(--i, 0) * 90ms + .15s), 0s, 0s, 0s, 0s;
+}
+.motion .pillars.in > li, .motion .host-brands.in .brand-logos > li, .motion .faq-list.in > .faq-item { opacity: 1; translate: none; }
+.motion .pillars { clip-path: inset(0 0 100% 0 round 22px); transition: opacity .9s var(--ease), transform .9s var(--ease), clip-path 1.3s var(--ease); }
+.motion .pillars.in { clip-path: inset(0 0 0 0 round 22px); }
+
+.hero-copy, .hero-media { will-change: translate, opacity; }
 @keyframes spinIn { from { transform: rotate(-90deg) scale(.6); opacity: 0; } }
 
 /* ---------------------------------------------------------- responsive */
