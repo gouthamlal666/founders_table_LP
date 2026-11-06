@@ -295,7 +295,9 @@
             word.textContent = part;
             word.style.setProperty('--wi', state.i++);
             // gradient text has to live on the word itself once it is inline-block
-            if (node.classList && node.classList.contains('text-gold')) word.className = 'text-gold';
+            if (node.tagName === 'EM') word.className = 'em-grad';
+            else if (node.classList && node.classList.contains('text-gold')) word.className = 'text-gold';
+            else if (node.classList && node.classList.contains('text-gold-dark')) word.className = 'text-gold-dark';
             mask.appendChild(word);
             frag.appendChild(mask);
           });

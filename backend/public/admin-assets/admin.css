@@ -1,12 +1,12 @@
-/* Founders Table — admin. Same palette as the landing page. */
+/* Founders Table — admin. RAG Holdings palette (ragroup.ae), same as the landing page. */
 :root {
-  --navy: #1c2448; --navy-900: #131a36; --navy-950: #0b1024;
-  --gold: #daad55; --gold-deep: #a9792c; --gold-soft: #f6ead0;
-  --gold-grad: linear-gradient(135deg, #f0cf86, #daad55 45%, #b8862f);
-  --cream: #f6f3ec; --white: #fff; --ink: #1c2448; --ink-soft: #4b5170; --muted: #8a8ea0;
-  --line: #e7e2d6; --line-soft: #f0ece2;
+  --navy: #001024; --navy-900: #000c1c; --navy-950: #00060f;
+  --gold: #daad55; --gold-deep: #a9792c; --gold-soft: #f7ecd2;
+  --gold-grad: linear-gradient(110deg, #f3da95 0%, #daad55 45%, #b8862f 75%, #e9c574 100%);
+  --cream: #f3f6fa; --white: #fff; --ink: #001024; --ink-soft: #3f4b5c; --muted: #69727d;
+  --line: #e1e6ed; --line-soft: #eef2f6;
   --danger: #c2413b; --ok: #2f8a5b;
-  --radius: 16px; --shadow: 0 1px 2px rgba(28,36,72,.05), 0 12px 32px -18px rgba(28,36,72,.25);
+  --radius: 16px; --shadow: 0 1px 2px rgba(0,16,36,.05), 0 12px 32px -18px rgba(0,16,36,.25);
   --ease: cubic-bezier(.22,.8,.24,1);
 }
 *, *::before, *::after { box-sizing: border-box; }
@@ -31,7 +31,7 @@ code { font-size: .9em; background: var(--white); border: 1px solid var(--line);
 .link:hover { color: var(--navy); }
 
 /* ---------------------------------------------------------- buttons & fields */
-.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 999px; border: 1px solid transparent; font-weight: 700; font-size: 13.5px; text-decoration: none; cursor: pointer; white-space: nowrap; transition: transform .2s var(--ease), box-shadow .2s, background-color .2s, border-color .2s; }
+.btn { display: inline-flex; align-items: center; justify-content: center; gap: 8px; height: 42px; padding: 0 18px; border-radius: 12px; border: 1px solid transparent; font-weight: 700; font-size: 13.5px; text-decoration: none; cursor: pointer; white-space: nowrap; transition: transform .2s var(--ease), box-shadow .2s, background-color .2s, border-color .2s; }
 .btn:hover { transform: translateY(-1px); }
 .btn:disabled { opacity: .6; cursor: wait; transform: none; }
 .btn-block { width: 100%; }
@@ -96,7 +96,7 @@ input:focus, select:focus, textarea:focus { border-color: var(--gold); box-shado
 .scrim { display: none; }
 
 .main { flex: 1; min-width: 0; margin-left: 256px; display: flex; flex-direction: column; }
-.topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 clamp(16px, 3vw, 36px); background: rgba(246,243,236,.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
+.topbar { position: sticky; top: 0; z-index: 20; display: flex; align-items: center; gap: 14px; height: 64px; padding: 0 clamp(16px, 3vw, 36px); background: rgba(243,246,250,.85); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); }
 .topbar-title { font-weight: 700; font-size: 15px; }
 .menu-btn { display: none; width: 40px; height: 40px; border-radius: 12px; border: 1px solid var(--line); background: var(--white); place-items: center; cursor: pointer; }
 .user-chip { margin-left: auto; display: flex; align-items: center; gap: 10px; font-weight: 600; font-size: 13.5px; }
@@ -195,11 +195,11 @@ a.kpi:hover { transform: translateY(-3px); border-color: var(--gold); }
 
 .table-card { padding: 0; overflow-x: auto; transition: opacity .2s; }
 .table { width: 100%; border-collapse: collapse; }
-.table th { text-align: left; padding: 14px 18px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); background: #fcfbf8; white-space: nowrap; }
+.table th { text-align: left; padding: 14px 18px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); border-bottom: 1px solid var(--line); background: #f8fafc; white-space: nowrap; }
 .table td { padding: 14px 18px; border-bottom: 1px solid var(--line-soft); vertical-align: middle; }
 .table tr:last-child td { border-bottom: 0; }
 .table tbody tr { transition: background-color .15s; }
-.table tbody tr:hover { background: #fdfcf9; }
+.table tbody tr:hover { background: #f8fafc; }
 .cell-main { display: block; text-decoration: none; min-width: 160px; }
 .cell-main strong { display: block; }
 .cell-main small { color: var(--muted); font-size: 12.5px; }
@@ -220,7 +220,7 @@ a.kpi:hover { transform: translateY(-3px); border-color: var(--gold); }
 /* ---------------------------------------------------------- detail */
 .back { display: inline-flex; align-items: center; gap: 8px; color: var(--muted); font-weight: 600; font-size: 13px; text-decoration: none; justify-self: start; }
 .back:hover { color: var(--gold-deep); }
-.detail-hero { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 24px; border-radius: var(--radius); background: radial-gradient(80% 140% at 100% 0%, rgba(218,173,85,.22), transparent 60%), var(--navy); color: var(--white); box-shadow: 0 24px 50px -30px rgba(11,16,36,.8); }
+.detail-hero { display: flex; align-items: center; gap: 18px; flex-wrap: wrap; padding: 24px; border-radius: var(--radius); background: radial-gradient(80% 140% at 100% 0%, rgba(218,173,85,.22), transparent 60%), var(--navy); color: var(--white); box-shadow: 0 24px 50px -30px rgba(0,6,15,.8); }
 .detail-hero .muted { color: rgba(255,255,255,.65); margin-top: 4px; }
 .detail-hero .eyebrow { color: var(--gold); }
 .detail-hero .initials { background: rgba(255,255,255,.08); border: 1px solid rgba(218,173,85,.4); }
@@ -251,7 +251,7 @@ a.kpi:hover { transform: translateY(-3px); border-color: var(--gold); }
 @media (max-width: 860px) {
   .sidebar { transform: translateX(-100%); transition: transform .35s var(--ease), box-shadow .35s; }
   .sidebar.open { transform: none; box-shadow: 20px 0 60px rgba(0,0,0,.35); }
-  .scrim { display: block; position: fixed; inset: 0; z-index: 30; background: rgba(11,16,36,.5); }
+  .scrim { display: block; position: fixed; inset: 0; z-index: 30; background: rgba(0,6,15,.5); }
   .main { margin-left: 0; }
   .menu-btn { display: grid; }
   .user-name { display: none; }
