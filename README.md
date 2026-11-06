@@ -5,12 +5,53 @@ Banner with video montage → About → RAG Holdings & venue → Episodes with r
 
 ## Run it
 
+The site runs on a small Laravel app in `backend/` (PHP 8.3+ and Composer). It serves the landing page, saves both forms to a database and has an admin dashboard.
+
+First time only:
+
 ```bash
-npm install
-npm start
+cd backend
+composer install
+cp .env.example .env
+php artisan key:generate
 ```
 
-Open http://localhost:3000
+Create an empty MySQL database called `founderstable_db` (for example in phpMyAdmin), check the `DB_HOST`, `DB_PORT`, `DB_USERNAME` and `DB_PASSWORD` lines in `.env` match your MySQL, then create the tables:
+
+```bash
+php artisan migrate
+```
+
+On this Mac the database lives in XAMPP's MariaDB, which runs on port **3308** (Homebrew's separate MySQL uses 3306), so `.env` has `DB_PORT=3308`.
+
+Create your admin login (asks for name, email and password):
+
+```bash
+php artisan admin:create
+```
+
+Then start it:
+
+```bash
+php artisan serve
+```
+
+- Website: http://localhost:8000
+- Admin: http://localhost:8000/admin
+
+## Admin dashboard
+
+Built with Laravel + Livewire. After signing in you get:
+
+- **Dashboard**: new applications and suggestions, last-7-days trend, a submissions chart (7 / 30 / 90 days), the application pipeline, and the latest entries.
+- **Guest applications** ("Be a Guest" form and pop-up): search, filter by status or form, change status right in the list, export to CSV.
+- **Guest suggestions** ("Suggest a Guest" form): the same tools.
+- **Detail pages**: every field, one-tap Email / WhatsApp / Call / LinkedIn, status, private notes, delete.
+- **Account**: change your name, email and password.
+
+Statuses: applications go New → Contacted → Shortlisted → Scheduled → Recorded (or Declined). Suggestions go New → Reviewing → Contacted → Invited (or Declined).
+
+Sign-in is limited to 5 wrong attempts a minute. There is no public sign-up: add admins with `php artisan admin:create`.
 
 ## Add a new episode
 
@@ -26,26 +67,35 @@ Thumbnails come from YouTube automatically. The episode count in the banner and 
 
 After editing, bump `?v=1` → `?v=2` on the script/style links in `index.html` so returning visitors get the new version.
 
-## Guest-suggestion form
+## The two forms
 
-Every submission is:
+Every "Be a Guest" and "Suggest a Guest" submission is:
 
-1. **Stored**: `data/guest-suggestions.csv` (opens in Excel/Sheets) and `data/guest-suggestions.jsonl`
-2. **Emailed** to your team: copy `.env.example` → `.env` and fill in your SMTP details and `MAIL_TO`. Restart the server.
+1. **Saved** in the MySQL database `founderstable_db` (set in `backend/.env` under `DB_*`) and shown in the admin. You can also browse it in phpMyAdmin.
+2. **Emailed** to your team, if you set it up: in `backend/.env` set `FOUNDERS_MAIL_TO` (one or more addresses, comma-separated) and the `MAIL_*` SMTP settings. Each email has an "Open in admin" button.
 
-If SMTP isn't set up yet, submissions are still saved. The server log will say the email was skipped.
+If email isn't set up, submissions are still saved. The log (`backend/storage/logs/laravel.log`) notes that the email was skipped.
 
-The form has front-end and server-side validation, a hidden spam trap (honeypot) and a rate limit (8 submissions per 10 min per IP).
+The forms have front-end and server-side validation, a hidden spam trap (honeypot) and a rate limit (8 submissions per 10 min per IP).
 
 ### Option B: static hosting (WordPress, Netlify, cPanel…)
 
-If you'd rather not run Node, use the Google Sheet + email script in `integrations/google-apps-script.gs` (setup steps are at the top of the file), then set the endpoint in `index.html`:
+If you'd rather not run the Laravel app, use the Google Sheet + email script in `integrations/google-apps-script.gs` (setup steps are at the top of the file), then set the endpoint in `index.html`:
 
 ```html
 window.FT_CONFIG = { formEndpoint: 'https://script.google.com/macros/s/XXXX/exec' };
 ```
 
-Upload `index.html` and the `assets/` folder. Nothing else is needed.
+Upload `index.html` and the `assets/` folder. Nothing else is needed, but there is no admin dashboard in this setup.
+
+## Putting it online
+
+Use any PHP host (Laravel Forge, Ploi, a VPS, or cPanel with PHP 8.3+):
+
+- Upload the whole folder. Point the domain's web root at **`backend/public`**.
+- `backend/public/assets` is a link to the landing page's `assets/` folder. If your host doesn't keep links, copy `assets/` into `backend/public/` instead.
+- In `backend/.env` set `APP_ENV=production`, `APP_DEBUG=false` and `APP_URL=https://your-domain`, then run `php artisan migrate --force` and `php artisan admin:create`.
+- If the landing page lives somewhere else, set `LANDING_PATH` to the folder that holds `index.html`.
 
 ## Files
 
@@ -56,8 +106,14 @@ assets/js/episodes.js      ← episode data (edit this to add episodes)
 assets/js/main.js          video controls, episode rendering, animations, form
 assets/video/              hero montage (MP4, fast-start) + poster frame
 assets/img/                logos, venue photos, favicon, social share image
-server.js                  static server + /api/guest-suggestions
 integrations/              Google Apps Script alternative for the form
+backend/                   Laravel + Livewire app: serves the site, form API, admin
+  routes/web.php           landing page + admin pages
+  routes/api.php           POST /api/podcast-applications, /api/guest-suggestions
+  app/Http/Controllers/    form handling (Api/) and CSV export (Admin/)
+  app/Livewire/            admin screens: login, dashboard, lists, detail, account
+  resources/views/         admin templates (layouts/, livewire/) and the email
+  public/admin-assets/     admin stylesheet
 ```
 
 ## Notes
