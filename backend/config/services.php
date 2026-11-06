@@ -31,8 +31,16 @@ return [
     'founders' => [
         // Comma-separated inboxes that get an email for every new submission. Empty = no emails.
         'mail_to' => env('FOUNDERS_MAIL_TO'),
-        // Folder holding the landing page (index.html + assets/). Default: the folder above backend/.
-        'landing_path' => env('LANDING_PATH', dirname(base_path())),
+        // Folder holding the landing page's index.html. Default: the folder above backend/.
+        // A relative LANDING_PATH (e.g. "resources/landing") is read from the app folder.
+        'landing_path' => (function () {
+            $path = env('LANDING_PATH');
+            if (! $path) {
+                return dirname(base_path());
+            }
+
+            return str_starts_with($path, '/') ? $path : base_path($path);
+        })(),
     ],
 
     'slack' => [
