@@ -74,7 +74,7 @@
     // progress bar (rAF only while playing)
     let raf;
     const tick = () => {
-      if (video.duration) bar.style.transform = `scaleX(${video.currentTime / video.duration})`;
+      if (video.duration) bar.style.setProperty('--p', (video.currentTime / video.duration).toFixed(4));
       raf = requestAnimationFrame(tick);
     };
     video.addEventListener('playing', () => { cancelAnimationFrame(raf); raf = requestAnimationFrame(tick); });
@@ -350,7 +350,7 @@
     document.body.appendChild(bar);
 
     const heroCopy = $('.hero-copy');
-    const heroMedia = $('.hero-media');
+    const heroMedia = $('.hero-stage .hero-video'); // drifts inside its panel (it has 6% headroom)
     // limit = share of the frame height the image may travel; matches the zoom headroom set in CSS
     const parallax = $$('.host-photo-frame img, .vg img').map((el) => ({
       el, speed: el.closest('.vg-main') ? 0.06 : 0.1, limit: el.closest('.host-photo-frame') ? 0.065 : 0.035,
@@ -366,7 +366,7 @@
         const p = Math.min(1, sy / vh);
         heroCopy.style.translate = `0 ${sy * 0.18}px`;
         heroCopy.style.opacity = String(1 - p * 0.9);
-        if (heroMedia) heroMedia.style.translate = `0 ${sy * 0.08}px`;
+        if (heroMedia) heroMedia.style.translate = `0 ${Math.min(sy * 0.06, heroMedia.offsetHeight * 0.05)}px`;
       }
       parallax.forEach(({ el, speed, limit }) => {
         const r = el.parentElement.getBoundingClientRect();

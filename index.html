@@ -27,7 +27,7 @@
   <link rel="preconnect" href="https://i.ytimg.com" />
 
   <link rel="preload" as="image" href="assets/video/founders-table-montage-poster.webp" fetchpriority="high" />
-  <link rel="stylesheet" href="assets/css/styles.css?v=22" />
+  <link rel="stylesheet" href="assets/css/styles.css?v=24" />
 
   <script>
     // Where the guest-suggestion form posts to.
@@ -82,89 +82,79 @@
 
     <!-- ============================== 1. HERO ============================== -->
     <section class="hero" aria-labelledby="hero-title">
+      <!-- Full-height film panel on the right; the copy overlaps its faded edge -->
+      <div class="hero-stage">
+        <video id="hero-video" class="hero-video"
+               muted loop playsinline autoplay preload="metadata"
+               poster="assets/video/founders-table-montage-poster.webp"
+               aria-label="Highlights from The Founders Table podcast, recorded at RAG Biz HQ">
+          <source src="assets/video/founders-table-montage.mp4" type="video/mp4" />
+        </video>
+        <div class="hero-stage-shade" aria-hidden="true"></div>
+        <div class="video-progress" aria-hidden="true"><span></span></div>
+
+        <p class="stage-tag"><span class="rec-dot" aria-hidden="true"></span> On set · RAG Biz HQ</p>
+
+        <div class="video-controls">
+          <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Turn sound on">
+            <span class="sound-icon">
+              <svg class="i i-muted" aria-hidden="true"><use href="#i-muted" /></svg>
+              <span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span>
+            </span>
+            <span class="sound-label">Sound off</span>
+          </button>
+          <button class="play-toggle" type="button" aria-label="Pause video">
+            <svg class="i i-pause" aria-hidden="true"><use href="#i-pause" /></svg>
+            <svg class="i i-playsm" aria-hidden="true"><use href="#i-play" /></svg>
+          </button>
+        </div>
+      </div>
+
       <div class="hero-bg" aria-hidden="true">
         <div class="glow glow-1"></div>
-        <div class="glow glow-2"></div>
         <div class="grain"></div>
       </div>
 
-      <div class="container hero-grid">
+      <div class="container hero-inner">
         <div class="hero-copy">
-          <img class="hero-logo" src="assets/img/founders-table-logo.webp" alt="The Founders Table Podcast by RAG Holdings" width="720" height="703" fetchpriority="high" />
+          <p class="hero-kicker hero-anim" style="--d:.05s"><span class="kicker-line" aria-hidden="true"></span> The signature podcast of RAG Holdings</p>
 
-          <p class="eyebrow hero-anim" style="--d:.1s"><span class="live-dot" aria-hidden="true"></span> The signature podcast of RAG Holdings</p>
-
-          <h1 id="hero-title" class="hero-title hero-anim" style="--d:.2s">
-            Real Founders.<br /><span class="text-gold">Real Stories.</span>
+          <h1 id="hero-title" class="hero-title">
+            <span class="ht-line" style="--l:0"><span class="ht-outline">Real</span></span>
+            <span class="ht-line" style="--l:1"><span>Founders.</span></span>
+            <span class="ht-line" style="--l:2"><span class="text-gold">Real Stories.</span></span>
           </h1>
 
-          <p class="hero-lead hero-anim" style="--d:.3s">
-            Conversations with founders and entrepreneurs about their journeys, challenges and the ideas shaping business.
-          </p>
-
-          <div class="hero-actions hero-anim" style="--d:.4s">
-            <a href="#episodes" class="btn btn-gold btn-lg">
-              <svg class="i" aria-hidden="true"><use href="#i-play" /></svg>
-              Watch the Episodes
-            </a>
-            <a href="https://www.youtube.com/@RAGGlobalBusinessHub?sub_confirmation=1" class="btn btn-ghost btn-lg" target="_blank" rel="noopener">
-              <svg class="i" aria-hidden="true"><use href="#i-youtube" /></svg>
-              Subscribe
-            </a>
-          </div>
-
-          <ul class="hero-meta hero-anim" style="--d:.5s">
-            <li><strong data-episode-count>4</strong> episodes out now</li>
-            <li>Recorded at <strong>RAG Biz HQ</strong></li>
-            <li>Sheikh Zayed Road, <strong>Dubai</strong></li>
-          </ul>
-        </div>
-
-        <div class="hero-media">
-          <figure class="video-card">
-            <div class="video-frame">
-              <video id="hero-video" class="hero-video"
-                     muted loop playsinline autoplay preload="metadata"
-                     poster="assets/video/founders-table-montage-poster.webp"
-                     aria-label="Highlights from The Founders Table podcast, recorded at RAG Biz HQ">
-                <source src="assets/video/founders-table-montage.mp4" type="video/mp4" />
-              </video>
-              <div class="video-shade" aria-hidden="true"></div>
-
-              <span class="video-chip"><span class="rec-dot" aria-hidden="true"></span> On set · RAG Biz HQ</span>
-
-              <div class="video-controls">
-                <button class="sound-toggle" type="button" aria-pressed="false" aria-label="Turn sound on">
-                  <svg class="i i-muted" aria-hidden="true"><use href="#i-muted" /></svg>
-                  <svg class="i i-sound" aria-hidden="true"><use href="#i-sound" /></svg>
-                  <span class="sound-label">Sound off</span>
-                </button>
-                <button class="play-toggle" type="button" aria-label="Pause video">
-                  <svg class="i i-pause" aria-hidden="true"><use href="#i-pause" /></svg>
-                  <svg class="i i-playsm" aria-hidden="true"><use href="#i-play" /></svg>
-                </button>
-              </div>
-
-              <div class="video-progress" aria-hidden="true"><span></span></div>
+          <div class="hero-foot hero-anim" style="--d:.55s">
+            <p class="hero-lead">
+              Conversations with founders and entrepreneurs about their journeys, challenges and the ideas shaping business.
+            </p>
+            <div class="hero-actions">
+              <a href="#episodes" class="btn btn-gold btn-lg">
+                <svg class="i" aria-hidden="true"><use href="#i-play" /></svg>
+                Watch the Episodes
+              </a>
+              <a href="https://www.youtube.com/@RAGGlobalBusinessHub?sub_confirmation=1" class="hero-link" target="_blank" rel="noopener">
+                <span class="hero-link-icon"><svg class="i" aria-hidden="true"><use href="#i-youtube" /></svg></span>
+                <span>Subscribe<small>on YouTube</small></span>
+              </a>
             </div>
-
-            <figcaption class="video-meta">
-              <div class="video-meta-item">
-                <svg class="i" aria-hidden="true"><use href="#i-mic" /></svg>
-                <div><strong>Long-form</strong><span>Conversations</span></div>
-              </div>
-              <div class="video-meta-item">
-                <svg class="i" aria-hidden="true"><use href="#i-pin" /></svg>
-                <div><strong>Dubai, UAE</strong><span>Sheikh Zayed Rd</span></div>
-              </div>
-            </figcaption>
-          </figure>
+          </div>
         </div>
       </div>
 
-      <a href="#about" class="scroll-cue" aria-label="Scroll to About">
-        <span></span>
-      </a>
+      <!-- Editorial strip along the bottom -->
+      <div class="container hero-strip-wrap">
+        <div class="hero-strip hero-anim" style="--d:.75s">
+          <img class="strip-logo" src="assets/img/founders-table-logo.webp" alt="The Founders Table Podcast by RAG Holdings" width="720" height="703" fetchpriority="high" />
+          <dl class="strip-facts">
+            <div><dt><span data-episode-count>4</span> Episodes</dt><dd>Out now on YouTube</dd></div>
+            <div><dt>RAG Biz HQ</dt><dd>Recorded in our studio</dd></div>
+            <div><dt>Dubai</dt><dd>Sheikh Zayed Road</dd></div>
+          </dl>
+          <a href="#about" class="scroll-cue" aria-label="Scroll to About"><span>Scroll</span><i aria-hidden="true"></i></a>
+        </div>
+      </div>
     </section>
 
     <!-- Topic ticker -->
@@ -893,6 +883,6 @@
   </svg>
 
   <script src="assets/js/episodes.js?v=3"></script>
-  <script src="assets/js/main.js?v=13" defer></script>
+  <script src="assets/js/main.js?v=14" defer></script>
 </body>
 </html>
